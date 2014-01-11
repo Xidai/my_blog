@@ -1,8 +1,11 @@
 ---
 layout: post
 title: "My First Post"
-description: ""
+description: "This is my first post. Hooray!"
+author: Xi
 category: 
-tags: []
+tags: [test, hello world]
 ---
 {% include JB/setup %}
+
+This is my first post. Hooray!

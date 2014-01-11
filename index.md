@@ -1,46 +1,25 @@
 ---
 layout: page
-title: Dai Xi's Blog!
-tagline: Supporting tagline
+title: Xi Dai's Blog
+tagline: Guns for show, knives for pro.
 ---
 {% include JB/setup %}
-
-Read [Jekyll Quick Start](http://jekyllbootstrap.com/usage/jekyll-quick-start.html)
-
-Complete usage and documentation available at: [Jekyll Bootstrap](http://jekyllbootstrap.com)
-
-## Update Author Attributes
-
-In `_config.yml` remember to specify your own data:
-    
-    title : My Blog =)
-    
-    author :
-      name : Name Lastname
-      email : blah@email.test
-      github : username
-      twitter : username
-
-The theme should reference these variables whenever needed.
-    
-## Sample Posts
-
-This blog contains sample posts which help stage pages and blog data.
-When you don't need the samples anymore just delete the `_posts/core-samples` folder.
-
-    $ rm -rf _posts/core-samples
-
-Here's a sample "posts list".
-
 <ul class="posts">
   {% for post in site.posts %}
-    <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+    <div>
+     <h2><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></h2>
+     <div><em>{{ post.date | date_to_string }} </em>
+          by <strong>{{ site.author.name }}</strong>
+          {% unless post.tags == empty %}
+            <span class="tag_box inline">
+            {% assign tags_list = post.tags %}
+            {% include JB/tags_list %}
+            </span>
+          {% endunless %} 
+      </div><br>
+     <div>{{ post.description }}</div>
+   </div>
+   <hr>
   {% endfor %}
 </ul>
-
-## To-Do
-
-This theme is still unfinished. If you'd like to be added as a contributor, [please fork](http://github.com/plusjade/jekyll-bootstrap)!
-We need to clean up the themes, make theme usage guides with theme-specific markup examples.
-
 

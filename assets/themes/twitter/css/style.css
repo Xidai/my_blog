@@ -49,7 +49,8 @@ body {
 	line-height:28px;
 }
 .tag_box.inline li {
-	float:left;
+	/*float:left;*/
+  display: inline-block;
 }
 .tag_box a {
 	padding: 3px 6px;
