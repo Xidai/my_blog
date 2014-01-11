@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Hello World!
+title: Dai Xi's Blog!
 tagline: Supporting tagline
 ---
 {% include JB/setup %}
