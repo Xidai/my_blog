@@ -18,6 +18,8 @@ tagline: Guns for show, knives for pro.
           {% endunless %} 
       </div><br>
      <div>{{ post.description }}</div>
+     <div>{{ post.content | more: "excerpt" }}</div>
+     <div><a href="{{ BASE_PATH }}{{ post.url }}">阅读更多 >></a></div>
    </div>
    <hr>
   {% endfor %}
