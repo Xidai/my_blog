@@ -28,3 +28,7 @@ def largest_prime_factor(n):
 第一反应就是竟然不用判断是否素数?! 一番思考后, 才理清了这里面的原理.
 
 任意一个大于1的正整数N都能写成<code>N = P<sub>1</sub> * P<sub>2</sub> * ... * P<sub>i</sub></code>. 其中<code>P<sub>1</sub></code>到<code>P<sub>i</sub></code>为从小到大排列的素数, 相邻的两个数可能相等(如`4 = 2 * 2`). 于是<code>P<sub>i</sub></code>就是我们要找的最大素因子.
+
+显然, 要找到<code>P<sub>i</sub></code>, 只需计算<code>N / (P<sub>1</sub> * P<sub>2</sub> * ... * P<sub>i - 1</sub>)</code>就可以了, 以此类推, 需要依次找到<code>P<sub>1</sub></code>, <code>P<sub>2</sub></code>..., 废话...
+
+于是首先我们可以计算出<code>n<sub>1</sub> = N / P<sub>1</sub></code>, 然后是<code>n<sub>2</sub> = n<sub>1</sub> / P<sub>2</sub></code>, 直到<code>n<sub>i</sub> = n<sub>i-1</sub> / P<sub>i</sub></code>, 此时<code>n<sub>i</sub></code>等于1, 于是除数就是答案了. 至此, 循环的终止条件就被确定下来了, 即<code>n <= 1</code>. (实际上把这个终止条件找对就已经成功了, 即使在代码中依然有判断素数的逻辑, 结果也是瞬间就出来.)
