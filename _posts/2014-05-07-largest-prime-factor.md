@@ -24,3 +24,7 @@ def largest_prime_factor(n):
         divisor += 1
     return divisor
 {% endhighlight %}
+
+第一反应就是竟然不用判断是否素数?! 一番思考后, 才理清了这里面的原理.
+
+任意一个大于1的正整数N都能写成<code>N = P<sub>1</sub> * P<sub>2</sub> * ... * P<sub>i</sub></code>. 其中<code>P<sub>1</sub></code>到<code>P<sub>i</sub></code>为从小到大排列的素数, 相邻的两个数可能相等(如`4 = 2 * 2`). 于是<code>P<sub>i</sub></code>就是我们要找的最大素因子.
