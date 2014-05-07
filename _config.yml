@@ -82,7 +82,7 @@ JB :
   comments :
     provider : disqus
     disqus :
-      short_name : xidai
+      short_name : xidaigithubio
     livefyre :
       site_id : 123
     intensedebate :
